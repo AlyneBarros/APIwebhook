@@ -1,0 +1,23 @@
+import sqlite3
+
+def create_table():
+    try:
+        conn = sqlite3.connect('dados.db')  # Connect to the database
+        cursor = conn.cursor()  # Create a cursor to execute SQL commands
+
+        # Create the table if it doesn't exist
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS relatorios (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            dados TEXT
+        )
+        """)
+
+        conn.commit()  # Save the changes
+    except sqlite3.Error as e:
+        print(f"An error occurred: {e}")
+    finally:
+        if conn:
+            conn.close()  # Close the connection with the database
+
+create_table()
