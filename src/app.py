@@ -69,4 +69,4 @@ def get_relatorios():
         return str(e), 500
 
 if __name__ == '__main__':
-    serve(app, host='0.0.0.0', port=5001)  # Use o Waitress para servir a aplicação
+    serve(app, host='0.0.0.0', port=5001)  # Substitua app.run() pelo serve do Waitress
