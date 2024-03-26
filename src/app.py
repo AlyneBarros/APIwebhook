@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, g
 from flasgger import Swagger
 import sqlite3
 import json
+from waitress import serve  # Importe o servidor Waitress
 
 app = Flask(__name__)
 swagger = Swagger(app)
@@ -68,4 +69,4 @@ def get_relatorios():
         return str(e), 500
 
 if __name__ == '__main__':
-    app.run(port=5001)
+    serve(app, host='0.0.0.0', port=5001)  # Use o Waitress para servir a aplicação
