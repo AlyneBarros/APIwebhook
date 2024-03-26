@@ -7,6 +7,8 @@ WORKDIR /app
 # Copie os arquivos necessários para o container
 COPY app.py .
 COPY dados.db .
+COPY src/app.py .
+
 
 # Instale as dependências do aplicativo
 RUN pip install flask flasgger
@@ -15,4 +17,4 @@ RUN pip install flask flasgger
 EXPOSE 5001
 
 # Execute o arquivo python quando o container iniciar
-CMD [ "python", "app.py" ]
+CMD [ "python", "./app.py" ]
