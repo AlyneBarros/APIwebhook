@@ -5,7 +5,6 @@ FROM python:3
 WORKDIR /app
 
 # Copie os arquivos necessários para o container
-COPY app.py .
 COPY dados.db .
 COPY src/app.py .
 
