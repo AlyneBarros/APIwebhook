@@ -17,4 +17,4 @@ RUN pip install flask flasgger
 EXPOSE 5001
 
 # Execute o arquivo python quando o container iniciar
-CMD [ "python", "./app.py" ]
+CMD [ "python", "app.py" ]
